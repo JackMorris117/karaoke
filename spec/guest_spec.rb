@@ -15,18 +15,41 @@ class TestGuest < Minitest::Test
         @guest2 = Guest.new("John")
         @guest3 = Guest.new("Michael")
         @guest4 = Guest.new("Jack")
-        
+
+        @room1 = Club.new("Room 1", [@song1, @song2], [])
+        @room2 = Club.new("Room 2", [@song3, @song4], ["Robyn", "Georgia", "Danny"])
+        @room3 = Club.new("Room 3", [@song5, @song6], [])
+        @room4 = Club.new("Room 4", [],[])
+
 
     end
     def test_can_get_name
         assert_equal("Garry", @guest1.name)
 
     end
+    # def test_move_into_room
+    #     @guest1.move_into_room(@room1)
+    #     assert_equal(["Garry"],@room1.guests )
+    # end
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 end
+
+
+
+
 
 
 

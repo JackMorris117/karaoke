@@ -8,9 +8,16 @@ class Club
         @guests = guests
     end
 
-    def who_is_in_the_room(guests)
-       if  @guests
-       end
+    def who_is_in_room
+        return @guests
+
+    end
+ 
+    def add_song_to_room(song)
+       @songs << song
+    end
+    def add_customer_to_room(guest)
+        @guests << guest
 
     end
 

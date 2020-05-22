@@ -18,9 +18,15 @@ class TestClub < Minitest::Test
         @song5 = Song.new("Never gonna give you up")
         @song6 = Song.new("Sweet Caroline")
 
+        @guest1 = Guest.new("Garry")
+        @guest2 = Guest.new("John")
+        @guest3 = Guest.new("Michael")
+        @guest4 = Guest.new("Jack")
+
         @room1 = Club.new("Room 1", [@song1, @song2], [])
         @room2 = Club.new("Room 2", [@song3, @song4], ["Robyn", "Georgia", "Danny"])
         @room3 = Club.new("Room 3", [@song5, @song6], [])
+        @room4 = Club.new("Room 4", [],[])
 
     end
     def test_can_get_room_number
@@ -44,6 +50,23 @@ class TestClub < Minitest::Test
         assert_equal(["Robyn", "Georgia", "Danny"], @room2.guests)
 
     end
+    def test_who_is_in_room
+        all_guests_in_room = @room2.who_is_in_room
+        assert_equal(["Robyn", "Georgia", "Danny"], @room2.guests)
+
+    end
+    def test_add_song_to_room
+        @room4.add_song_to_room(@song1)
+        assert_equal([@song1], @room4.songs )
+
+    end
+        def test_add_customer_to_room
+        @room4.add_customer_to_room(@guest1)
+        assert_equal([@guest1], @room4.guests )
+
+
+    end
+
 
 
 
