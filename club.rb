@@ -1,15 +1,16 @@
 class Club
-    attr_reader :name, :songs, :guests
+    attr_reader :club_name, :room_name, :songs, :karaoke_room
 
 
-    def initialize(name, songs = [], guests = [])
-        @name = name
+    def initialize(club_name, room_name, songs = [], karaoke_room = [])
+        @club_name = club_name
+        @room_name = room_name
         @songs = songs
-        @guests = guests
+        @karaoke_room = karaoke_room
     end
 
     def who_is_in_room
-        return @guests
+        return @karaoke_room
 
     end
  
@@ -17,9 +18,14 @@ class Club
        @songs << song
     end
     def add_customer_to_room(guest)
-        @guests << guest
+        @karaoke_room << guest
 
     end
+    def remove_customer(guest)
+        @karaoke_room.delete(guest)
+    end
+     
+
 
 
 
