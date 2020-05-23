@@ -27,10 +27,7 @@ class TestGuest < Minitest::Test
         assert_equal("Garry", @guest1.name)
 
     end
-    # def test_move_into_room
-    #     @guest1.move_into_room(@room1)
-    #     assert_equal(["Garry"],@room1.guests )
-    # end
+  
 
 
 
